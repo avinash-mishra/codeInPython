@@ -31,3 +31,17 @@ os.mkdir('dir_a/dir_b/dir_c')
 # Remove an empty directory
 os.rmdir('dirname')
 os.rmdir('dir_a/dir_b/dir_c') # Removes dir_c only
+
+
+
+######################################################################################################33
+
+# Create a directory and set user:group with python's os module
+
+import pwd
+
+file_path = 'example'
+if not os.path.exists(file_path):
+    os.makedirs(file_path)  # Creates with default permission of 0777
+    uid, gid = pwd.getpwnam('root').pw_uid, pwd.getpwnam('avi').pw_uid
+    os.chown(file_path, uid, gid)  # set user:group as root:avi
