@@ -6,6 +6,7 @@ def worker():
     thread worker function
     :return:
     """
+    print(threading.get_ident())
     print("worker")
 
 
